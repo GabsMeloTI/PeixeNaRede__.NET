@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Captura>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DsQuantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DsPeso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DsFoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pescaria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DsQuantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DsPeso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DsFoto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especie.CdEspecie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pescaria.CdPescaria)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CdCaptura">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CdCaptura">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CdCaptura">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

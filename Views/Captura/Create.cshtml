@@ -1,0 +1,52 @@
+﻿@model Captura
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Captura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DsQuantidade" class="control-label"></label>
+                <input asp-for="DsQuantidade" class="form-control" />
+                <span asp-validation-for="DsQuantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DsPeso" class="control-label"></label>
+                <input asp-for="DsPeso" class="form-control" />
+                <span asp-validation-for="DsPeso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DsFoto" class="control-label"></label>
+                <input asp-for="DsFoto" class="form-control" />
+                <span asp-validation-for="DsFoto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CdEspecie" class="control-label"></label>
+                <select asp-for="CdEspecie" class ="form-control" asp-items="ViewBag.CdEspecie"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CdPescaria" class="control-label"></label>
+                <select asp-for="CdPescaria" class ="form-control" asp-items="ViewBag.CdPescaria"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

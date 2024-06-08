@@ -1,0 +1,63 @@
+﻿@model Usuario
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NmUsuario" class="control-label"></label>
+                <input asp-for="NmUsuario" class="form-control" />
+                <span asp-validation-for="NmUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DsEmail" class="control-label"></label>
+                <input asp-for="DsEmail" class="form-control" />
+                <span asp-validation-for="DsEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DsSenha" class="control-label"></label>
+                <input asp-for="DsSenha" class="form-control" />
+                <span asp-validation-for="DsSenha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DsTipo" class="control-label"></label>
+                <input asp-for="DsTipo" class="form-control" />
+                <span asp-validation-for="DsTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DsLocalizacao" class="control-label"></label>
+                <input asp-for="DsLocalizacao" class="form-control" />
+                <span asp-validation-for="DsLocalizacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DsFotoPerfil" class="control-label"></label>
+                <input asp-for="DsFotoPerfil" class="form-control" />
+                <span asp-validation-for="DsFotoPerfil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CdPescaria" class="control-label"></label>
+                <select asp-for="CdPescaria" class ="form-control" asp-items="ViewBag.CdPescaria"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

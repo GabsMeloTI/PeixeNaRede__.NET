@@ -1,0 +1,55 @@
+﻿@model Pescaria
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pescaria</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DtPescaria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DtPescaria)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DsLocalizacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DsLocalizacao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DsCondicoesClimaticas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DsCondicoesClimaticas)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TpPesca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TpPesca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DsMetodoPesca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DsMetodoPesca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DsDetalhes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DsDetalhes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CdPescaria">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

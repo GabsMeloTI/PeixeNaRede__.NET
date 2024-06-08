@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Pescaria>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DtPescaria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DsLocalizacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DsCondicoesClimaticas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TpPesca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DsMetodoPesca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DsDetalhes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtPescaria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DsLocalizacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DsCondicoesClimaticas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TpPesca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DsMetodoPesca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DsDetalhes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CdPescaria">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CdPescaria">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CdPescaria">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
